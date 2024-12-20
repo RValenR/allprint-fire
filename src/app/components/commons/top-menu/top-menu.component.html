@@ -1,0 +1,35 @@
+<div class="topbar">
+    <div class="logo-container">
+        <img class="img-logo" src="assets/images/allprint-logo1.webp" alt="">
+    </div>
+
+    
+  <!-- Botón del menú hamburguesa -->
+
+  <div class="menu-bar" (click)="toggleMenu()">
+    <!-- <i class="icon-menu"><fa-icon [icon]="faBars"></fa-icon></i> -->
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+    <div class="top-menu" [class.open]="menuOpen">
+        <ul>
+            <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</li>
+            <li routerLink="/quienes-somos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Quienes somos</li>
+            <li routerLink="/productos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Productos</li>
+            <li routerLink="/contactanos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Contáctanos</li>
+            <li routerLink="/nosotros" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">¿Como llegar?</li>
+
+            <!-- <li>
+                <div>
+                    <i class="icon"><fa-icon [icon]="faMoon"></fa-icon></i>
+                </div>
+            </li> -->
+            <!-- <li routerLink="/contactos" routerLinkActive="active">Contacto</li> -->
+        </ul>
+
+    </div>
+
+
+</div>
