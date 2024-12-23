@@ -1,1 +1,32 @@
-<p>main works!</p>
+<div class="main-container">
+    <div>
+        Allprint todo en impresión digital. 
+    </div>
+    <!-- <p-galleria [value]="images" [circular]="true" [autoPlay]="true" [responsiveOptions]="responsiveOptions"
+        [numVisible]="5" [containerStyle]="{ 'max-width': '640px' }">
+        <ng-template pTemplate="item" let-item>
+            <img [src]="item.itemImageSrc" style="width: 100%;" />
+        </ng-template>
+        <ng-template pTemplate="thumbnail" let-item>
+            <div class="grid grid-nogutter justify-content-center">
+                <img [src]="item.thumbnailImageSrc" />
+            </div>
+        </ng-template>
+    </p-galleria> -->
+
+
+    <nz-carousel [nzAutoPlay]="true" nzDotPosition="bottom">
+        <div nz-carousel-content *ngFor="let slide of slides">
+          <img [src]="slide" class="carousel-image" alt="Slide">
+        </div>
+      </nz-carousel>
+
+
+      <!-- <nz-carousel nzAutoPlay>
+        @for (index of slides; track index) {
+          <div nz-carousel-content>
+            <h3>{{ index }}</h3>
+          </div>
+        }
+      </nz-carousel> -->
+</div>
