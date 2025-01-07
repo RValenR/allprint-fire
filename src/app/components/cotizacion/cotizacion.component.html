@@ -1,15 +1,52 @@
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 <body>
-  <!-- Primer div con imagen -->
-  <div class="image-container">
-    <img src="assets/images/fondo1.jpg" alt="Imagen de cabecera">
-    <div class="interactive-text">
-        <h1>Cotiza en Línea</h1>
+  <div class="container">
+      <div class="title-container">
+          <h2 class="full-width-title">
+              Solicita una cotización en línea y uno de nuestros asesores te contactará
+              en breve para ayudarte con lo que necesites
+          </h2>
+      </div>
+      <div class="content-container">
+          <div class="form-container">
+              <form id="contactForm">
+                  <label for="nombre">Nombre:</label>
+                  <input type="text" id="nombre" placeholder="Nombre" required>
+
+                  <label for="apellido">Apellido:</label>
+                  <input type="text" id="apellido" placeholder="Apellido" required>
+
+                  <label for="empresa">Empresa:</label>
+                  <input type="text" id="empresa" placeholder="Empresa">
+
+                  <label for="telefono">Teléfono:</label>
+                  <input type="tel" id="telefono" placeholder="Teléfono" required>
+
+                  <label for="email">Correo Electrónico:</label>
+                  <input type="email" id="email" placeholder="Correo Electrónico" required>
+
+                  <label for="productoInteres">Producto de Interés:</label>
+                  <input type="text" id="productoInteres" placeholder="Producto de Interés" required>
+
+                  <label for="descripcion">Descripción / Observaciones:</label>
+                  <textarea id="descripcion" placeholder="Descripción / Observaciones"></textarea>
+
+                  <label for="cantidad">Cantidad:</label>
+                  <input type="number" id="cantidad" placeholder="Cantidad" required>
+
+                  <label for="archivo">Subir Archivo:</label>
+                  <input type="file" id="archivo" required>
+
+                  <div class="captcha-container">
+                      <label for="captcha">Resuelve el captcha:</label>
+                      <input type="text" id="captcha" placeholder="Ingrese el texto del captcha" required>
+                  </div>
+
+                  <button type="submit">Enviar</button>
+              </form>
+          </div>
+          <div class="image-container">
+              <img src="assets/images/callcenter.png" alt="Persona atendiendo en un call center">
+          </div>
       </div>
   </div>
-
-  
-  
-  
 </body>
