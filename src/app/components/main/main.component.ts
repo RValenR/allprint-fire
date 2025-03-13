@@ -16,28 +16,12 @@ export class MainComponent implements AfterViewInit{
   @ViewChild('swiperRef', { static: false }) swiperRef!: ElementRef;
   swiper!: Swiper;
 
-  slides = [
-    'assets/images/fondo1.jpg',
-     'assets/images/fondo2.jpg',
-    'assets/images/fondo3.jpg' 
-  ];
-
   images: string[] = [
-    'assets/images/fondo1.jpg',
-     'assets/images/fondo2.jpg',
-    'assets/images/fondo3.jpg' 
+    'assets/images/fondo3.png',
+    'assets/images/fondo1.png',
+    'assets/images/fondo2.png' 
   ];
   
-  secondSlides = [
-    'https://via.placeholder.com/1200x400/FF5733/FFFFFF?text=Slide+1',
-    'https://via.placeholder.com/1200x400/33FF57/FFFFFF?text=Slide+2',
-    'https://via.placeholder.com/1200x400/3357FF/FFFFFF?text=Slide+3',
-    'https://via.placeholder.com/1200x400/FF33A6/FFFFFF?text=Slide+4',
-    'https://via.placeholder.com/1200x400/A633FF/FFFFFF?text=Slide+5',
-    'https://via.placeholder.com/1200x400/FFA633/FFFFFF?text=Slide+6',
-    'https://via.placeholder.com/1200x400/33FFA6/FFFFFF?text=Slide+7',
-    'https://via.placeholder.com/1200x400/57FF33/FFFFFF?text=Slide+8',
-  ];
 
   constructor(private router: Router) {}
 
