@@ -1,211 +1,195 @@
-<!-- Enlace a la versión más actual de Font Awesome desde CDN -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 <div class="main-container">
-
-    <!-- <p-galleria [value]="images" [circular]="true" [autoPlay]="true" [responsiveOptions]="responsiveOptions"
-        [numVisible]="5" [containerStyle]="{ 'max-width': '640px' }">
-        <ng-template pTemplate="item" let-item>
-            <img [src]="item.itemImageSrc" style="width: 100%;" />
-        </ng-template>
-        <ng-template pTemplate="thumbnail" let-item>
-            <div class="grid grid-nogutter justify-content-center">
-                <img [src]="item.thumbnailImageSrc" />
-            </div>
-        </ng-template>
-    </p-galleria> -->
-
-
-    <div class="second-carousel-container">
-      <nz-carousel [nzAutoPlay]="true" [nzDotPosition]="'bottom'">
-        <div nz-carousel-content *ngFor="let slide of slides">
-          <img [src]="slide" class="second-carousel-image" alt="Slide">
+  <!-- PAginador inicial -->
+   <section id="slider">
+    <div class="swiper-container" #swiperRef>
+      <div class="title">
+        <span>ALLPRINT IMPRENTA DIGITAL</span>
+        <span>Todo en impresión digital</span>
+      </div>
+  
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let img of images">
+          <img [src]="img" alt="Imagen">
         </div>
-      </nz-carousel>
+      </div>
+  
+      <!-- Botones de navegación -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+  
+      <!-- Paginación -->
+      <div class="swiper-pagination"></div>
     </div>
-    
-    
+   </section>
 
-      <!-- <nz-carousel nzAutoPlay>
-        @for (index of slides; track index) {
-          <div nz-carousel-content>
-            <h3>{{ index }}</h3>
-          </div>
-        }
-      </nz-carousel> -->
 
-      <div class="container">
-        <div class="title">
-          <h1>Solicite una Cotización Ahora</h1>
-        </div>
-        <div class="button-container">
-          <button class="modern-button" (click)="redirectToPage('/cotizacion')">Cotiza en línea</button>
-        </div>
-        
-      </div>
-      <div class="second-carousel-container">
-        <nz-carousel [nzAutoPlay]="true" [nzDotPosition]="'bottom'">
-          <div nz-carousel-content *ngFor="let slide of secondSlides">
-            <img [src]="slide" class="second-carousel-image" alt="Slide">
-          </div>
-        </nz-carousel>
-      </div>
-      <div class="content-section">
-        <!-- Texto a la izquierda -->
-        <div class="content-text">
-          <h1>ALLPRINT-IMPRENTA DIGITAL</h1>
-          <h2>Todo en impresión digital</h2>
-          <p>
-            Imprenta digital especiakizada en impresión bajo demanda de una
-            gran variedad de productos y servicios
-          </p>
-        </div>
-        
-        <!-- Imagen a la derecha -->
-        <div class="content-image">
-          <img src="assets/images/impresora.jpg" alt="Descripción de la imagen">
-        </div>
-      </div>
-      <h2>SERVICIOS QUE OFRECEMOS</h2>
-      <div class="matrix-container">
-        
-        <div class="matrix-item" (click)="redirectToPage('page1')">
-          <i class="fa fa-solid fa-id-card-clip"></i>
-          <h3>Tarjetas de Presentación</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page2')">
-          <i class="fa fa-solid fa-file-invoice"></i>
-          <h3>Facturas & Referencias</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page3')">
-          <i class="fa fa-solid fa-triangle-exclamation"></i>
-          <h3>Señaletica</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page4')">
-          <i class="fa fa-solid fa-tag"></i>
-          <h3>Llaveros</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page5')">
-          <i class="fa fa-solid fa-barcode"></i>
-          <h3>Código de Barras</h3>
-        </div>
-        
-        <div class="matrix-item" (click)="redirectToPage('page6')">
-          <i class="fa fa-solid fa-scroll"></i>
-          <h3>Roll Ups</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page6')">
-          <i class="fa fa-solid fa-compact-disc"></i>
-          <h3>CD´s DVD´s</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page6')">
-          <i class="fa fa-solid fa-calendar-days"></i>
-          <h3>Calendarios</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page6')">
-          <i class="fa fa-solid fa-window-restore"></i>
-          <h3>Magnéticos</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page6')">
-          <i class="fa fa-solid fa-stamp"></i>
-          <h3>Sellos de Caucho</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page6')">
-          <i class="fa fa-solid fa-note-sticky"></i>
-          <h3>Adhesivos</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page6')">
-          <i class="fa fa-solid fa-id-badge"></i>
-          <h3>Carnets</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page6')">
-          <i class="fa fa-solid fa-pen-clip"></i>
-          <h3>Esferos</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page6')">
-          <i class="fa fa-solid fa-computer-mouse"></i>
-          <h3>MousePads</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page6')">
-          <i class="fa fa-brands fa-shirtsinbulk"></i>
-          <h3>Estampados</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page6')">
-          <i class="fa fa-brands fa-product-hunt"></i>
-          <h3>Botones Publicitarios</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page6')">
-          <i class="fa fa-solid fa-book"></i>
-          <h3>Impresión-Copiado-Anillado</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page6')">
-          <i class="fa fa-solid fa-money-check-dollar"></i>
-          <h3>Habladores-Material POP</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page6')">
-          <i class="fas fa-solid fa-address-book"></i>
-          <h3>Cuadernos y Agendas</h3>
-        </div>
-
-        <div class="matrix-item" (click)="redirectToPage('page6')">
-          <i class="fa-solid fa-beer-mug-empty"></i>
-          <h3>Jarras Perzonalizadas</h3>
-        </div>
-        <!-- Agrega los demás elementos aquí (hasta 20 elementos en total) -->
-      </div>
-      <div class="content-section">
-        <!-- Texto a la izquierda -->
-        <div class="content-text">
-          <h1>ALLPRINT-IMPRENTA DIGITAL</h1>
-          <h2>Todo en impresión digital</h2>
-          
-          
-            <button class="modern-button" (click)="redirectToProduct()">Ver producto más vendido</button>
-          
-        </div>
-      <!-- Imagen a la derecha -->
-      <div class="content-image">
-        <img src="assets/images/pulgar.jpg" alt="Descripción de la imagen">
-      </div>
+  <div class="container">
+    <div class="title">
+      <h1>Solicite una Cotización Ahora</h1>
     </div>
-    <div class="clientes-container">
-      <h2>Clientes que han confiado en nosotros</h2>
-      <div class="clientes-matrix">
-        <img src="assets/images/logos/bancosolidario.png" alt="Logo 1" class="cliente-logo">
-        <img src="assets/images/logos/edimca.png" alt="Logo 2" class="cliente-logo">
-        <img src="assets/images/logos/grunental.png" alt="Logo 3" class="cliente-logo">
-        <img src="assets/images/logos/biess.png" alt="Logo 4" class="cliente-logo">
-        <img src="assets/images/logos/humana.webp" alt="Logo 4" class="cliente-logo">
-        <img src="assets/images/logos/santillana.png" alt="Logo 4" class="cliente-logo">
-        <img src="assets/images/logos/fybeca.png" alt="Logo 4" class="cliente-logo">
-        <img src="assets/images/logos/sri.png" alt="Logo 4" class="cliente-logo">
-        <img src="assets/images/logos/kia.png" alt="Logo 4" class="cliente-logo">
-        <img src="assets/images/logos/procredit.png" alt="Logo 4" class="cliente-logo">
-        <img src="assets/images/logos/kfc.png" alt="Logo 4" class="cliente-logo">
-        <img src="assets/images/logos/sukasa.png" alt="Logo 4" class="cliente-logo">
-        <img src="assets/images/logos/gm.png" alt="Logo 4" class="cliente-logo">
-        <img src="assets/images/logos/giz.png" alt="Logo 4" class="cliente-logo">
-        <img src="assets/images/logos/meditropoli.png" alt="Logo 4" class="cliente-logo">
-        <img src="assets/images/logos/citimed.png" alt="Logo 4" class="cliente-logo">
-        <img src="assets/images/logos/toyota.png" alt="Logo 4" class="cliente-logo">
-        <img src="assets/images/logos/xerox.png" alt="Logo 4" class="cliente-logo">
-        <!-- Agrega más imágenes si es necesario -->
-      </div>
+    <div class="button-container">
+      <button class="modern-button" (click)="redirectToPage('/cotizacion')">Cotiza en línea</button>
     </div>
   </div>
+
+
+  <div class="content-section">
+    <!-- Texto a la izquierda -->
+    <div class="content-text">
+      <h1>ALLPRINT-IMPRENTA DIGITAL</h1>
+      <h2>Todo en impresión digital</h2>
+      <p>
+        Imprenta digital especiakizada en impresión bajo demanda de una
+        gran variedad de productos y servicios
+      </p>
+    </div>
+
+    <!-- Imagen a la derecha -->
+    <div class="content-image">
+      <img src="assets/images/impresora.jpg" alt="Descripción de la imagen">
+    </div>
+  </div>
+  <h2>SERVICIOS QUE OFRECEMOS</h2>
+  <div class="matrix-container">
+
+    <div class="matrix-item" (click)="redirectToPage('page1')">
+      <i class="fa fa-solid fa-id-card-clip"></i>
+      <h3>Tarjetas de Presentación</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page2')">
+      <i class="fa fa-solid fa-file-invoice"></i>
+      <h3>Facturas & Referencias</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page3')">
+      <i class="fa fa-solid fa-triangle-exclamation"></i>
+      <h3>Señaletica</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page4')">
+      <i class="fa fa-solid fa-tag"></i>
+      <h3>Llaveros</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page5')">
+      <i class="fa fa-solid fa-barcode"></i>
+      <h3>Código de Barras</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page6')">
+      <i class="fa fa-solid fa-scroll"></i>
+      <h3>Roll Ups</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page6')">
+      <i class="fa fa-solid fa-compact-disc"></i>
+      <h3>CD´s DVD´s</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page6')">
+      <i class="fa fa-solid fa-calendar-days"></i>
+      <h3>Calendarios</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page6')">
+      <i class="fa fa-solid fa-window-restore"></i>
+      <h3>Magnéticos</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page6')">
+      <i class="fa fa-solid fa-stamp"></i>
+      <h3>Sellos de Caucho</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page6')">
+      <i class="fa fa-solid fa-note-sticky"></i>
+      <h3>Adhesivos</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page6')">
+      <i class="fa fa-solid fa-id-badge"></i>
+      <h3>Carnets</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page6')">
+      <i class="fa fa-solid fa-pen-clip"></i>
+      <h3>Esferos</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page6')">
+      <i class="fa fa-solid fa-computer-mouse"></i>
+      <h3>MousePads</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page6')">
+      <i class="fa fa-brands fa-shirtsinbulk"></i>
+      <h3>Estampados</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page6')">
+      <i class="fa fa-brands fa-product-hunt"></i>
+      <h3>Botones Publicitarios</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page6')">
+      <i class="fa fa-solid fa-book"></i>
+      <h3>Impresión-Copiado-Anillado</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page6')">
+      <i class="fa fa-solid fa-money-check-dollar"></i>
+      <h3>Habladores-Material POP</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page6')">
+      <i class="fas fa-solid fa-address-book"></i>
+      <h3>Cuadernos y Agendas</h3>
+    </div>
+
+    <div class="matrix-item" (click)="redirectToPage('page6')">
+      <i class="fa-solid fa-beer-mug-empty"></i>
+      <h3>Jarras Perzonalizadas</h3>
+    </div>
+    <!-- Agrega los demás elementos aquí (hasta 20 elementos en total) -->
+  </div>
+  <div class="content-section">
+    <!-- Texto a la izquierda -->
+    <div class="content-text">
+      <h1>ALLPRINT-IMPRENTA DIGITAL</h1>
+      <h2>Todo en impresión digital</h2>
+
+
+      <button class="modern-button" (click)="redirectToProduct()">Ver producto más vendido</button>
+
+    </div>
+    <!-- Imagen a la derecha -->
+    <div class="content-image">
+      <img src="assets/images/pulgar.jpg" alt="Descripción de la imagen">
+    </div>
+  </div>
+  <div class="clientes-container">
+    <h2>Clientes que han confiado en nosotros</h2>
+    <div class="clientes-matrix">
+      <img src="assets/images/logos/bancosolidario.png" alt="Logo 1" class="cliente-logo">
+      <img src="assets/images/logos/edimca.png" alt="Logo 2" class="cliente-logo">
+      <img src="assets/images/logos/grunental.png" alt="Logo 3" class="cliente-logo">
+      <img src="assets/images/logos/biess.png" alt="Logo 4" class="cliente-logo">
+      <img src="assets/images/logos/humana.webp" alt="Logo 4" class="cliente-logo">
+      <img src="assets/images/logos/santillana.png" alt="Logo 4" class="cliente-logo">
+      <img src="assets/images/logos/fybeca.png" alt="Logo 4" class="cliente-logo">
+      <img src="assets/images/logos/sri.png" alt="Logo 4" class="cliente-logo">
+      <img src="assets/images/logos/kia.png" alt="Logo 4" class="cliente-logo">
+      <img src="assets/images/logos/procredit.png" alt="Logo 4" class="cliente-logo">
+      <img src="assets/images/logos/kfc.png" alt="Logo 4" class="cliente-logo">
+      <img src="assets/images/logos/sukasa.png" alt="Logo 4" class="cliente-logo">
+      <img src="assets/images/logos/gm.png" alt="Logo 4" class="cliente-logo">
+      <img src="assets/images/logos/giz.png" alt="Logo 4" class="cliente-logo">
+      <img src="assets/images/logos/meditropoli.png" alt="Logo 4" class="cliente-logo">
+      <img src="assets/images/logos/citimed.png" alt="Logo 4" class="cliente-logo">
+      <img src="assets/images/logos/toyota.png" alt="Logo 4" class="cliente-logo">
+      <img src="assets/images/logos/xerox.png" alt="Logo 4" class="cliente-logo">
+      <!-- Agrega más imágenes si es necesario -->
+    </div>
+  </div>
+</div>

@@ -204,3 +204,47 @@
 .cliente-logo:hover {
   filter: grayscale(0%); /* Vuelve a los colores originales */
 }
+
+
+#slider .swiper-container {
+  width: 100%;
+  height: 400px; /* Ajusta la altura según necesites */
+}
+
+#slider .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(40%); /* Oscurece la imagen */
+
+}
+
+#slider .swiper-button-next,
+.swiper-button-prev {
+  color: white; /* Cambia el color de los botones si no son visibles */
+  margin-top: -130px;
+}
+
+#slider .swiper-pagination {
+  position: static;
+  margin-top: 10px; /* Ajusta la posición */
+}
+
+#slider .swiper-pagination-bullet {
+  background: white !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+#slider .title{
+  width: 100%;
+    position: absolute;
+    z-index: 3;
+    color: white;
+    display: flex;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 40px;
+}

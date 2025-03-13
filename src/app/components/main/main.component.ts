@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { GalleriaModule } from 'primeng/galleria';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { RouterModule,Router } from '@angular/router';
+import Swiper from 'swiper';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 @Component({
   selector: 'app-main',
@@ -10,8 +12,17 @@ import { RouterModule,Router } from '@angular/router';
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
-export class MainComponent {
+export class MainComponent implements AfterViewInit{
+  @ViewChild('swiperRef', { static: false }) swiperRef!: ElementRef;
+  swiper!: Swiper;
+
   slides = [
+    'assets/images/fondo1.jpg',
+     'assets/images/fondo2.jpg',
+    'assets/images/fondo3.jpg' 
+  ];
+
+  images: string[] = [
     'assets/images/fondo1.jpg',
      'assets/images/fondo2.jpg',
     'assets/images/fondo3.jpg' 
@@ -38,5 +49,21 @@ export class MainComponent {
   // Método para redirigir al producto más vendido
   redirectToProduct() {
     this.router.navigate(['/product']); // Asegúrate de que 'producto' sea la ruta correcta
+  }
+
+  ngAfterViewInit() {
+    this.swiper = new Swiper(this.swiperRef.nativeElement, {
+      modules: [Navigation, Pagination, Autoplay],
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true, // Permite hacer clic en los puntos de la paginación
+      },
+      autoplay: { delay: 3000, disableOnInteraction: false },
+    });
   }
 }
