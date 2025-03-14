@@ -1,18 +1,19 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { GalleriaModule } from 'primeng/galleria';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { RouterModule,Router } from '@angular/router';
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-
+import { DataService } from '../../services/data.service';
+import { HttpClientModule } from '@angular/common/http';  // Importa el módulo HttpClient
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [GalleriaModule, NzCarouselModule],
+  imports: [GalleriaModule, NzCarouselModule, HttpClientModule],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
-export class MainComponent implements AfterViewInit{
+export class MainComponent implements OnInit, AfterViewInit{
   @ViewChild('swiperRef', { static: false }) swiperRef!: ElementRef;
   swiper!: Swiper;
 
@@ -23,7 +24,22 @@ export class MainComponent implements AfterViewInit{
   ];
   
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, 
+    private dataService: DataService
+  ) {}
+  datos =[]
+  ngOnInit() {
+    this.dataService.getDatos().subscribe(
+      (data) => {
+        this.datos = data;
+        console.log(data)
+
+      },
+      (error) => {
+        console.error('Error al obtener datos', error);
+      }
+    );
+  }
 
   // Redirige a una página específica al hacer clic en un ítem
   redirectToPage(page: string): void {
