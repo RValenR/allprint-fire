@@ -40,23 +40,7 @@
   justify-content: center;
 }
 
-.modern-button {
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  border-radius: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
-}
 
-.modern-button:hover {
-  background-color: #0056b3;
-  box-shadow: 0 6px 12px rgba(0, 86, 179, 0.4);
-}
 
 .second-carousel-container {
   width: 100%;
@@ -298,6 +282,47 @@
 }
 
 
+#slider .button-whatsapp {
+  width: 140px;
+  background-color: #028c17;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  margin: 0 45px;
+}
+
+#slider .button-whatsapp:hover {
+  background-color: #2ac346;
+  box-shadow: 0 6px 12px rgba(0, 86, 179, 0.4);
+}
+
+#slider .button-mail {
+  width: 140px;
+  background-color: #b8362a;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+  margin: 0 45px;
+}
+
+#slider .button-mail:hover {
+  background-color: #eb4536;
+  box-shadow: 0 6px 12px rgba(0, 86, 179, 0.4);
+}
+
+
 #services {
   padding: 40px;
   position: relative; /* Asegura que el pseudo-elemento se posicione sobre el fondo */
@@ -322,4 +347,38 @@
   background-repeat: no-repeat;
   filter: brightness(40%); /* Oscurece la imagen aplicando el filtro */
   z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido */
+}
+
+#clients .swiper-container {
+  width: 100%;
+  height: 400px;
+  /* Ajusta la altura según necesites */
+}
+
+#clients .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(40%);
+  /* Oscurece la imagen */
+
+}
+
+#clients .swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  /* Cambia el color de los botones si no son visibles */
+  margin-top: -130px;
+}
+
+#clients .swiper-pagination {
+  position: static;
+  margin-top: 10px;
+  /* Ajusta la posición */
+}
+
+#clients .swiper-pagination-bullet {
+  background: white !important;
+  width: 12px !important;
+  height: 12px !important;
 }
