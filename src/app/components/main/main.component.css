@@ -219,7 +219,7 @@
 #slider .swiper-container {
   width: 100%;
   height: 400px;
-  /* Ajusta la altura según necesites */
+  overflow: hidden; /* Evita el desbordamiento */
 }
 
 #slider .swiper-slide img {
@@ -348,15 +348,19 @@
 
 #clients .swiper-container {
   width: 100%;
-  height: 400px;
-  /* Ajusta la altura según necesites */
+  height: 200px;
+  overflow: hidden; /* Evita el desbordamiento */
+}
+
+#clients .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 #clients .swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(40%);
+  width: 200px;
   /* Oscurece la imagen */
 
 }

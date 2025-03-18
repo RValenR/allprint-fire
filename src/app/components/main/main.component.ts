@@ -113,16 +113,11 @@ export class MainComponent implements OnInit, AfterViewInit{
 
     this.swiper2 = new Swiper(this.swiperRef2.nativeElement, {
       modules: [Navigation, Pagination, Autoplay],
+      slidesPerView: 4, // 4 imágenes por slide
+      spaceBetween: 30, // Espacio entre imágenes
       loop: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true, // Permite hacer clic en los puntos de la paginación
-      },
-      autoplay: { delay: 3000, disableOnInteraction: false },
+      
+      autoplay: { delay: 1500, disableOnInteraction: false },
     });
   }
 }
