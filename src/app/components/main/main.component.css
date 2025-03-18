@@ -125,37 +125,27 @@
 
 /* Contenedor de la matriz que ocupa todo el ancho */
 .matrix-container {
-  background: transparent;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  /* 5 columnas */
-  grid-template-rows: repeat(4, 1fr);
-  /* 4 filas */
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
   padding: 20px;
-  margin: 0;
-  width: 100%;
-  /* Ocupa todo el ancho de la pantalla */
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para cada elemento de la matriz */
 .matrix-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f4f4f4;
-  padding: 20px;
-  border-radius: 8px;
+  width: calc(20% - 15px); /* 5 por fila */
+  min-width: 150px; /* Evita que los elementos sean demasiado pequeños */
   text-align: center;
+  background: #ffffff; /* Fondo oscuro */
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .matrix-item:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   /* Efecto lupa */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   /* Sombra al pasar el mouse */
@@ -320,6 +310,13 @@
 #slider .button-mail:hover {
   background-color: #eb4536;
   box-shadow: 0 6px 12px rgba(0, 86, 179, 0.4);
+}
+
+@media (max-width: 1152px) {
+  #slider .swiper-button-next,
+  .swiper-button-prev {
+    margin-top: 10px !important; /* Ajusta el margen cuando la pantalla sea menor a 1552px */
+  }
 }
 
 
