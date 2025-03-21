@@ -8,7 +8,56 @@
         <h1>Productos</h1>
       </div>
   </div>
-
+  <div class="container">
+    <aside>
+        <h2>Categorías</h2>
+        <ul class="categorias">
+          <li *ngFor="let categoria of categorias">{{ categoria.nombre }}</li>
+        </ul>
+      </aside>
+    <div class="productos-container">
+        <div class="producto">
+            <img src="https://via.placeholder.com/100" alt="Producto">
+            <div class="producto-info">
+                <h3>Nombre del Producto</h3>
+                <p>Descripción breve del producto.</p>
+            </div>
+            <button class="detalle-btn">Detalles</button>
+        </div>
+        <div class="producto">
+            <img src="https://via.placeholder.com/100" alt="Producto">
+            <div class="producto-info">
+                <h3>Otro Producto</h3>
+                <p>Descripción breve del producto.</p>
+            </div>
+            <button class="detalle-btn">Detalles</button>
+        </div>
+        <div class="producto">
+          <img src="https://via.placeholder.com/100" alt="Producto">
+          <div class="producto-info">
+              <h3>Otro Producto</h3>
+              <p>Descripción breve del producto.</p>
+          </div>
+          <button class="detalle-btn">Detalles</button>
+      </div>
+      <div class="producto">
+        <img src="https://via.placeholder.com/100" alt="Producto">
+        <div class="producto-info">
+            <h3>Otro Producto</h3>
+            <p>Descripción breve del producto.</p>
+        </div>
+        <button class="detalle-btn">Detalles</button>
+    </div>
+    <div class="producto">
+      <img src="https://via.placeholder.com/100" alt="Producto">
+      <div class="producto-info">
+          <h3>Otro Producto</h3>
+          <p>Descripción breve del producto.</p>
+      </div>
+      <button class="detalle-btn">Detalles</button>
+  </div>
+    </div>
+</div>
   
   
   
