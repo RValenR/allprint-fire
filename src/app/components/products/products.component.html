@@ -25,7 +25,9 @@
             <h3>{{ producto.nombre }}</h3>
             <p>{{ producto.descripcion }}</p>
           </div>
-          <button class="detalle-btn">Detalles</button>
+          <button (click)="goToProductDetail(producto.id)" class="detalle-btn">
+            Detalles
+          </button>
         </div>
       </div>
       
