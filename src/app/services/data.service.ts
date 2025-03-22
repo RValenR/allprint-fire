@@ -9,7 +9,7 @@ import { BannerImage } from '../interfaces/banner-image.interface';  // Importar
 })
 export class DataService {
   private apiUrl = 'https://allprint-backend.vercel.app/api/datos';  // Cambia esta URL a la de tu API
-  private imgApi = 'http://localhost:3000/imagenes/banner';
+  private imgApi = 'https://allprint-backend.vercel.app/imagenes/banner';
   constructor(private http: HttpClient) {}
 
   getDatos(): Observable<any> {

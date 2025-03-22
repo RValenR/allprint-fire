@@ -6,7 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CategoriasService {
-  private apiUrl = 'http://localhost:3000/api/categorias';
+  
+  // private apiUrl = 'http://localhost:3000/api/categorias';
+  private apiUrl = 'https://allprint-backend.vercel.app/api/categorias';
 
   constructor(private http: HttpClient) {}
 
