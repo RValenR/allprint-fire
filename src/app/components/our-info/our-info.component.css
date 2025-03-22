@@ -9,7 +9,7 @@ body {
   /* Primer div con imagen */
 .image-container {
     width: 100%;
-    height: 400px;
+    height: 200px;
     position: relative;
   }
   
@@ -23,7 +23,7 @@ body {
   /* Estilo para el texto interactivo */
   .interactive-text {
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -56,58 +56,75 @@ body {
   
   /* Segundo div dividido en dos partes */
  /* Estilos para el contenedor principal más pequeño */
-.half-container {
+ .half-container {
+  position: relative; /* Para que el ::before se posicione correctamente */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px; /* Menos espacio interno */
-  background-image: url('/assets/images/fondo_formas.png'); /* Imagen de fondo */
+  padding: 15px;
+  background-image: url('/assets/images/fondo_formas.png');
   background-size: cover;
   background-position: center;
-  border-radius: 15px; /* Bordes redondeados */
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Sombra elegante */
-  color: black; /* Color de texto */
-  max-width: 90%; /* Ancho máximo reducido */
-  width: 90%; /* Adaptable a pantallas pequeñas */
-  margin: 20px auto; /* Centrado en la página */
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+  color: #e0e0e0; /* Texto gris claro */
+  max-width: 90%;
+  width: 90%;
+  margin: 20px auto;
+  z-index: 1; /* Asegura que el contenido esté por encima del fondo */
 }
 
-/* Estilos para el lado izquierdo */
+/* Capa oscura sobre la imagen de fondo */
+.half-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Oscurece el fondo sin afectar el texto */
+  border-radius: 15px;
+  z-index: -1; /* Se coloca detrás del contenido */
+}
+
+/* Estilos del texto */
 .half-container .left {
   flex: 1;
-  padding: 10px;
-  font-size: 20px; /* Letra un poco más pequeña */
-  font-weight: bold;
-}
-
-/* Estilos para el lado derecho */
-.half-container .right {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: justify;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
 }
 
 /* Imagen en el lado derecho */
 .half-container .right img {
   width: 100%;
-  max-width: 900px; /* Imagen más pequeña */
+  max-width: 350px;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
 }
 
-/* Responsivo */
+
+/* Ajuste responsivo */
 @media (max-width: 768px) {
   .half-container {
-      flex-direction: column;
-      text-align: center;
-      width: 95%; /* Más compacto en móviles */
+    flex-direction: column;
+    text-align: center;
   }
-  
-  .half-container .right img {
-      width: 50%;
+
+  .half-container .left {
+    order: 2;
+  }
+
+  .half-container .right {
+    order: 1;
+    margin-bottom: 15px;
   }
 }
+
   
   /* Tercer div dividido en tres partes */
   /* Contenedor principal más pequeño y centrado */
@@ -133,6 +150,16 @@ body {
   font-weight: bold;
   border-radius: 10px;
   font-size: 18px; /* Letra un poco más pequeña */
+  justify-content: center;
+  h1{
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+  }
+  p{
+    text-align: center;
+  }
 }
 
 /* Fondo azul en la izquierda */

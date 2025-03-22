@@ -313,7 +313,7 @@
 }
 #slider .button-maps {
   width: 140px;
-  background-color: #0000FF;
+  background-color: #0a60cd;
   color: #ffffff;
   border: none;
   border-radius: 10px;
@@ -327,7 +327,7 @@
 }
 
 #slider .button-maps:hover {
-  background-color: #4747c7;
+  background-color: #276bc5;
   box-shadow: 0 6px 12px rgba(0, 86, 179, 0.4);
 }
 
