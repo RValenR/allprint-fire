@@ -3,17 +3,20 @@ import { GalleriaModule } from 'primeng/galleria';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { RouterModule,Router } from '@angular/router';
 import Swiper from 'swiper';
+import { CommonModule } from '@angular/common'; // Añade esto
 
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { DataService } from '../../services/data.service';
 import { HttpClientModule } from '@angular/common/http';  // Importa el módulo HttpClient
 import { BannerImage } from '../../interfaces/banner-image.interface';  // Importar la interfaz
 import { ParametrosService } from '../../services/parametros.service'; // Nuevo servicio
+// main.component.ts (solo agregar esto en los imports)
+import { CategoriasService } from '../../services/categorias.service';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [GalleriaModule, NzCarouselModule, HttpClientModule],
+  imports: [GalleriaModule, NzCarouselModule, HttpClientModule, CommonModule],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
@@ -59,10 +62,12 @@ export class MainComponent implements OnInit, AfterViewInit{
       disableOnInteraction: false
     }
   };
-
+  categorias: any[] = [];
+  loadingCategorias: boolean = true;
   constructor(private router: Router, 
     private dataService: DataService,
-    private parametrosService: ParametrosService // Inyecta el nuevo servicio
+    private parametrosService: ParametrosService,// Inyecta el nuevo servicio
+    private categoriasService: CategoriasService 
   ) {}
 
   ngOnInit() {
@@ -96,11 +101,24 @@ export class MainComponent implements OnInit, AfterViewInit{
         console.error('Error al cargar parámetros:', error);
       }
     });
+    this.categoriasService.getCategorias().subscribe({
+      next: (data) => {
+        this.categorias = data;
+        this.loadingCategorias = false;
+      },
+      error: (error) => {
+        console.error('Error al cargar categorías:', error);
+        this.loadingCategorias = false;
+      }
+    });
   }
 
   // Redirige a una página específica al hacer clic en un ítem
-  redirectToPage(page: string): void {
-    this.router.navigate([page]); // Reemplaza con las rutas reales de tus páginas
+  redirectToPage(categoria: any) {
+    this.router.navigate(['/productos'], { 
+      queryParams: { categoria: categoria.id },
+      state: { categoriaId: categoria.id } // Envía el ID también en el state
+    });
   }
 
   // Método para redirigir al producto más vendido
@@ -136,5 +154,12 @@ export class MainComponent implements OnInit, AfterViewInit{
 encodeMessage(message: string): string {
   return encodeURIComponent(message);
 }
-
+redirectToProducts(categoriaId: number) {
+  this.router.navigate(['/productos'], { 
+    queryParams: { categoria: categoriaId },
+    state: { 
+      categoriaId: categoriaId,
+    }
+  });
+}
 }

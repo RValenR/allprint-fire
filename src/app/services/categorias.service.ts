@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+interface Categoria {
+  id: number;
+  nombre: string;
+  icono: string;
+  pagina?: string; // Opcional: si tienes páginas diferentes para cada categoría
+}
 @Injectable({
   providedIn: 'root'
 })

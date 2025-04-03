@@ -63,104 +63,11 @@
     <h2>PRODUCTOS Y SERVICIOS</h2>
     <div class="matrix-container">
 
-      <div class="matrix-item" (click)="redirectToPage('page1')">
-        <i class="fa fa-solid fa-id-card-clip"></i>
-        <h3>Tarjetas de Presentación</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page2')">
-        <i class="fa fa-solid fa-file-invoice"></i>
-        <h3>Facturas & Referencias</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page3')">
-        <i class="fa fa-solid fa-triangle-exclamation"></i>
-        <h3>Señaletica</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page4')">
-        <i class="fa fa-solid fa-tag"></i>
-        <h3>Llaveros</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page5')">
-        <i class="fa fa-solid fa-barcode"></i>
-        <h3>Código de Barras</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page6')">
-        <i class="fa fa-solid fa-scroll"></i>
-        <h3>Roll Ups</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page6')">
-        <i class="fa fa-solid fa-compact-disc"></i>
-        <h3>CD´s DVD´s</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page6')">
-        <i class="fa fa-solid fa-calendar-days"></i>
-        <h3>Calendarios</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page6')">
-        <i class="fa fa-solid fa-window-restore"></i>
-        <h3>Magnéticos</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page6')">
-        <i class="fa fa-solid fa-stamp"></i>
-        <h3>Sellos de Caucho</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page6')">
-        <i class="fa fa-solid fa-note-sticky"></i>
-        <h3>Adhesivos</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page6')">
-        <i class="fa fa-solid fa-id-badge"></i>
-        <h3>Carnets</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page6')">
-        <i class="fa fa-solid fa-pen-clip"></i>
-        <h3>Esferos</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page6')">
-        <i class="fa fa-solid fa-computer-mouse"></i>
-        <h3>MousePads</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page6')">
-        <i class="fa fa-brands fa-shirtsinbulk"></i>
-        <h3>Estampados</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page6')">
-        <i class="fa fa-brands fa-product-hunt"></i>
-        <h3>Botones Publicitarios</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page6')">
-        <i class="fa fa-solid fa-book"></i>
-        <h3>Impresión-Copiado-Anillado</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page6')">
-        <i class="fa fa-solid fa-money-check-dollar"></i>
-        <h3>Habladores-Material POP</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page6')">
-        <i class="fas fa-solid fa-address-book"></i>
-        <h3>Cuadernos y Agendas</h3>
-      </div>
-
-      <div class="matrix-item" (click)="redirectToPage('page6')">
-        <i class="fa-solid fa-beer-mug-empty"></i>
-        <h3>Jarras Perzonalizadas</h3>
+      <div *ngFor="let categoria of categorias" 
+        class="matrix-item" 
+        (click)="redirectToProducts(categoria.id)">
+        <i class="fa {{categoria.icono}}"></i>
+        <h3>{{categoria.nombre}}</h3>
       </div>
       <!-- Agrega los demás elementos aquí (hasta 20 elementos en total) -->
     </div>
