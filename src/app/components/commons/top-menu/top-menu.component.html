@@ -21,7 +21,9 @@
             <li routerLink="/quienes-somos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Quienes somos</li>
             <li routerLink="/productos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Productos y Servicios</li>
             <!-- <li routerLink="/contactanos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Contáctanos</li> -->
-            <li routerLink="/nosotros" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ubicanos</li>
+            <li *ngIf="mapsUrl" (click)="openMaps()" style="cursor: pointer;">
+                Ubícanos
+              </li>
 
             <!-- <li>
                 <div>
