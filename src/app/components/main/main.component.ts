@@ -8,6 +8,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { DataService } from '../../services/data.service';
 import { HttpClientModule } from '@angular/common/http';  // Importa el módulo HttpClient
 import { BannerImage } from '../../interfaces/banner-image.interface';  // Importar la interfaz
+import { ParametrosService } from '../../services/parametros.service'; // Nuevo servicio
 
 @Component({
   selector: 'app-main',
@@ -26,7 +27,7 @@ export class MainComponent implements OnInit, AfterViewInit{
 
   images: string[] =[];
   datos =[];
-
+  parametros: any = {}; // Nueva propiedad para almacenar los parámetros
   clienteLogos: string[] = [
     'assets/images/logos/bancosolidario.png',
     'assets/images/logos/edimca.png',
@@ -60,7 +61,8 @@ export class MainComponent implements OnInit, AfterViewInit{
   };
 
   constructor(private router: Router, 
-    private dataService: DataService
+    private dataService: DataService,
+    private parametrosService: ParametrosService // Inyecta el nuevo servicio
   ) {}
 
   ngOnInit() {
@@ -84,6 +86,16 @@ export class MainComponent implements OnInit, AfterViewInit{
         console.error('Error al obtener datos', error);
       }
     );
+    // Nueva llamada para obtener parámetros
+    this.parametrosService.getParametros().subscribe({
+      next: (data) => {
+        this.parametros = data;
+        console.log('Parámetros cargados:', data);
+      },
+      error: (error) => {
+        console.error('Error al cargar parámetros:', error);
+      }
+    });
   }
 
   // Redirige a una página específica al hacer clic en un ítem
@@ -120,4 +132,9 @@ export class MainComponent implements OnInit, AfterViewInit{
       autoplay: { delay: 1500, disableOnInteraction: false },
     });
   }
+  // En MainComponent
+encodeMessage(message: string): string {
+  return encodeURIComponent(message);
+}
+
 }

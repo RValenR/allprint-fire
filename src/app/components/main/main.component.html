@@ -20,39 +20,43 @@
       <!-- Paginación -->
       <div class="swiper-pagination"></div>
     </div>
-
-    <div class="redirect-container">
+    <div class="redirect-container" *ngIf="parametros.correo_contacto">
+      <!-- Botón de Email -->
       <div class="btn-container">
         <div class="button-mail">
-          <a
-            href="mailto:allprint.ec@gmail.com?subject=Quiero%20una%20cotización&body=Hola,%20quisiera%20más%20información%20sobre%20sus%20servicios." target="_blank">
-            <img src="../../../assets/images/logos/mail_logo.png" alt="Gmail" style="width: 30px;">
+          <a [href]="'mailto:' + parametros.correo_contacto + 
+                      '?subject=' + encodeMessage(parametros.asunto_correo || 'Consulta') + 
+                      '&body=' + encodeMessage(parametros.cuerpo_correo || 'Hola, quisiera más información')" 
+             target="_blank">
+            <img src="assets/images/logos/mail_logo.png" alt="Gmail" style="width: 30px;">
           </a>
         </div>
-        <p>allprint.ec&#64;gmail.com</p>
-
+        <p>{{ parametros.correo_contacto }}</p>
       </div>
-
+    
+      <!-- Botón de WhatsApp -->
       <div class="btn-container">
         <div class="button-whatsapp">
-          <a href="https://wa.me/c/593985081616?text=Hola,%20quiero%20cotizar%20una%20impresión" target="_blank">
-            <img src="../../../assets/images/logos/whatsapp_logo.png" alt="Gmail" style="width: 30px;">
+          <a [href]="'https://wa.me/' + parametros.whatsapp_numero + 
+                     '?text=' + encodeMessage(parametros.whatsapp_mensaje || 'Hola, quiero información')" 
+             target="_blank">
+            <img src="assets/images/logos/whatsapp_logo.png" alt="WhatsApp" style="width: 30px;">
           </a>
         </div>
-        <p>+593 985081616</p>
+        <p>+{{ parametros.whatsapp_numero?.replace('593', '593 ') }}</p>
       </div>
+    
+      <!-- Botón de Maps -->
       <div class="btn-container">
         <div class="button-maps">
-          <a href="https://www.google.com.ec/maps/place/Mega+Santa+Mar%C3%ADa+-+Chillogallo/@-0.2795056,-78.5557129,17z/data=!3m1!4b1!4m6!3m5!1s0x91d598b98c74ed45:0x9a1fa71d73ee05cb!8m2!3d-0.279511!4d-78.553138!16s%2Fg%2F1tfpwblc?hl=es&entry=ttu&g_ep=EgoyMDI1MDMxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-            <img src="../../../assets/images/logos/logo_maps.png" alt="Google Maps" style="width: 30px;">
+          <a [href]="parametros.maps_ubicacion" target="_blank">
+            <img src="assets/images/logos/logo_maps.png" alt="Google Maps" style="width: 30px;">
           </a>
         </div>
-        <p>Ubicanos</p>
+        <p>{{ parametros.texto_ubicacion || 'Ubícanos' }}</p>
       </div>
-
-      <!-- <button class="button-whatsapp" (click)="redirectToPage('/cotizacion')">Whatsapp</button>
-      <button class="button-mail" (click)="redirectToPage('/cotizacion')">Mail</button> -->
     </div>
+    
   </section>
 
   <section id="services">
