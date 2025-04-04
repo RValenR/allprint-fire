@@ -1,3 +1,7 @@
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:3000'
+};
 export const firebaseConfig = {
   apiKey: "AIzaSyAPudU8TSe3Vc9pEgMXJ6qpO8dVREQAcNk",
   authDomain: "allprint-c12c5.firebaseapp.com",
@@ -7,4 +11,3 @@ export const firebaseConfig = {
   appId: "1:699278202294:web:365bba26c151ce21e2dd17",
   measurementId: "G-KQ2R0FMZS0"
 };
-  
