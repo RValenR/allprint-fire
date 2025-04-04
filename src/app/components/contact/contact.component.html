@@ -1,73 +1,64 @@
+<!-- Primer div con imagen -->
 <div class="image-container">
-    <img src="assets/images/fondo2.png" alt="Imagen de cabecera">
-    <div class="interactive-text">
-        <h1>Contáctanos</h1>
-      </div>
+  <img src="assets/images/fondo_productos.png" alt="Imagen de cabecera">
+  <div class="interactive-text">
+    <h1>Ofertas</h1>
   </div>
-<div class="container">
-    <!-- Primer div con iconos y descripciones -->
-    <div class="icon-container">
-        <div class="icon-item">
-            <a href="https://www.google.com/maps" target="_blank">
-                <img src="assets/images/googlemaps.png" alt="Google Maps">
-            </a>
-            <p>Calle Primera y Transversal, Casa No</p>
-        </div>
-        <div class="icon-item">
-            <a href="https://wa.me/0996358741" target="_blank">
-                <img src="assets/images/wasap.jpg" alt="WhatsApp">
-            </a>
-            <p>WhatsApp: 0996358741</p>
-        </div>
-        <div class="icon-item">
-            <a href="tel:+0223658741">
-                <img src="assets/images/telefono.png" alt="Teléfono">
-            </a>
-            <p>Teléfono: 0223658741</p>
-        </div>
-        <div class="icon-item">
-            <a href="mailto:asdasd@gmail.com">
-                <img src="gmail.png" alt="Gmail">
-            </a>
-            <p>Gmail: asdasd.com</p>
-        </div>
-    </div>
-
-    <!-- Segundo div con formulario -->
-    <div class="form-container">
-        <div class="form-left">
-            <form >
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre"  name="nombre" required>
-
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido"  name="apellido" required>
-
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono"  name="telefono" required>
-
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email"  name="email" required>
-
-                <label for="mensaje">Escribe tu mensaje:</label>
-                <textarea id="mensaje"  name="mensaje" required></textarea>
-
-                <label for="captcha">Captcha:</label>
-                <input type="text" id="captcha"  name="captcha" required>
-
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-        <div class="form-right">
-            <img src="assets/images/callcenter.png" alt="Imagen de contacto">
-        </div>
-    </div>
-
-    <!-- Tercer div con Google Maps -->
-    <div class="map-container">
-        <h3>Haz clic en el mapa para abrir en Google Maps</h3>
-        <a href="https://www.google.com/maps" target="_blank">
-            <img src="map-thumbnail.jpg" alt="Mapa" class="map-thumbnail">
-        </a>
-    </div>
 </div>
+<div class="contenedor-principal" *ngIf="!loading && oferta; else loadingOrError">
+  <!-- Sección de títulos -->
+  <div class="titulo">
+    <h1>{{ oferta.nombre_oferta }}</h1>
+  </div>
+  
+  <!-- Mostrar porcentaje de descuento -->
+  <div class="descuento" *ngIf="oferta.porcentaje_descuento">
+    {{ oferta.porcentaje_descuento }}% DE DESCUENTO
+  </div>
+  
+  <!-- Sección de fechas -->
+  <div class="seccion-fechas">
+    <div class="fecha-inicio">
+      <span>Válido desde: </span>
+      <strong>{{ formatDate(oferta.fecha_inicio) }}</strong>
+    </div>
+    <div class="fecha-fin">
+      <span>Hasta: </span>
+      <strong>{{ formatDate(oferta.fecha_fin) }}</strong>
+    </div>
+  </div>
+  
+  <!-- Sección de imagen y descripción -->
+  <div class="seccion-inferior">
+    <div class="parte-imagen" *ngIf="oferta.imagen_url">
+      <img [src]="oferta.imagen_url" [alt]="oferta.nombre_oferta" class="imagen-oferta">
+    </div>
+    <div class="parte-textos">
+      <div class="descripcion" *ngIf="oferta.descripcion">
+        <h3>Descripción</h3>
+        <p>{{ oferta.descripcion }}</p>
+      </div>
+      
+      <div class="terminos" *ngIf="oferta.terminos_condiciones">
+        <h3>Términos y condiciones</h3>
+        <p>{{ oferta.terminos_condiciones }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingOrError>
+  <div class="loading-error">
+    <div *ngIf="loading" class="loading">
+      <p>Cargando oferta destacada...</p>
+    </div>
+    
+    <div *ngIf="error" class="error">
+      <p>{{ error }}</p>
+    </div>
+    
+    <div *ngIf="!loading && !error && !oferta" class="no-oferta">
+      <p>No hay ofertas destacadas disponibles</p>
+    </div>
+  </div>
+</ng-template>
