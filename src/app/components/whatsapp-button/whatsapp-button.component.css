@@ -1,26 +1,59 @@
+/* Botón de WhatsApp con animaciones mejoradas */
 .whatsapp-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: #25D366;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: all 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  /* Nuevas animaciones agregadas */
+  animation: breathe 2s ease-in-out infinite;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  /* Pausa animaciones al hacer hover */
+  animation: none; 
+}
+
+.whatsapp-button img {
+  width: 35px;
+  height: 35px;
+  /* Nueva animación para el icono */
+  animation: beat 2s ease-in-out infinite;
+}
+
+/* Animación de respiración (contorno) */
+@keyframes breathe {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
   }
-  
-  .whatsapp-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
   }
-  
-  .whatsapp-button img {
-    width: 35px;
-    height: 35px;
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
+}
+
+/* Animación de latido (icono) */
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
