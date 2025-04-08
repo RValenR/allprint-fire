@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container" #mainContainer>
   <!-- Primer aside (Categorías) -->
   <div class="aside-container">
     <h2 class="category-title">Categorías</h2>
@@ -14,7 +14,8 @@
       <ul class="categorias">
         <li *ngFor="let categoria of categorias" 
             (click)="onCategoryClick(categoria.id)"
-            [class.active]="selectedCategoryId === categoria.id">
+            [class.active]="selectedCategoryId === categoria.id"
+            [id]="'category-' + categoria.id">
           {{ categoria.nombre }}
         </li>
       </ul>

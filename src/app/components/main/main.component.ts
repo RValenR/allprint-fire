@@ -157,8 +157,10 @@ encodeMessage(message: string): string {
 redirectToProducts(categoriaId: number) {
   this.router.navigate(['/productos'], { 
     queryParams: { categoria: categoriaId },
+    fragment: 'categoria-' + categoriaId,
     state: { 
       categoriaId: categoriaId,
+      scrollToCategory: true
     }
   });
 }
