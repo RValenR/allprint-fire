@@ -37,7 +37,7 @@ export class ProductsComponent implements OnInit {
       this.categoriasService.getCategorias().subscribe({
         next: (data) => {
           this.categorias = data;
-          
+          console.log(this.categorias);
           if (categoriaId && this.categorias.some(c => c.id === categoriaId)) {
             this.onCategoryClick(categoriaId, shouldScroll);
           } else if (this.categorias.length > 0) {
@@ -64,6 +64,7 @@ export class ProductsComponent implements OnInit {
     this.productosService.getProductosPorCategoria(categoriaId).subscribe({
       next: (data) => {
         this.productos = data;
+        console.log(this.productos)
         if (this.productos.length > 0) {
           this.selectProduct(this.productos[0]);
         }

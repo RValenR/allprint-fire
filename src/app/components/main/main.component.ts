@@ -74,8 +74,6 @@ export class MainComponent implements OnInit, AfterViewInit{
     this.dataService.getDatos().subscribe(
       (data) => {
         this.datos = data;
-        console.log(data)
-
       },
       (error) => {
         console.error('Error al obtener datos', error);
@@ -95,7 +93,6 @@ export class MainComponent implements OnInit, AfterViewInit{
     this.parametrosService.getParametros().subscribe({
       next: (data) => {
         this.parametros = data;
-        console.log('Parámetros cargados:', data);
       },
       error: (error) => {
         console.error('Error al cargar parámetros:', error);

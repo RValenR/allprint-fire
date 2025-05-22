@@ -17,12 +17,10 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log('ID recibido:', id); // Verifica si el ID se recibe
   
     if (id) {
       this.productosService.getProductoPorId(+id).subscribe(
         (data) => {
-          console.log('Producto recibido:', data); // Verifica si llegan los datos
           this.producto = data;
         },
         (error) => {

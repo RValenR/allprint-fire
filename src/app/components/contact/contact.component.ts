@@ -22,11 +22,9 @@ export class ContactComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log('Iniciando carga de oferta...'); // Depuración
     
     this.ofertaService.getOfertaDestacada().subscribe({
       next: (data) => {
-        console.log('Datos recibidos:', data); // Depuración
         this.oferta = data;
         this.loading = false;
       },

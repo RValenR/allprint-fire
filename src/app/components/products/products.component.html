@@ -12,10 +12,8 @@
     <h2 class="category-title">Categorías</h2>
     <aside>
       <ul class="categorias">
-        <li *ngFor="let categoria of categorias" 
-            (click)="onCategoryClick(categoria.id)"
-            [class.active]="selectedCategoryId === categoria.id"
-            [id]="'category-' + categoria.id">
+        <li *ngFor="let categoria of categorias" (click)="onCategoryClick(categoria.id)"
+          [class.active]="selectedCategoryId === categoria.id" [id]="'category-' + categoria.id">
           {{ categoria.nombre }}
         </li>
       </ul>
@@ -27,9 +25,8 @@
     <h2 class="product-title">Productos</h2>
     <aside>
       <ul class="productos-lista">
-        <li *ngFor="let producto of productos" 
-            (click)="selectProduct(producto)"
-            [class.active]="selectedProduct?.id === producto.id">
+        <li *ngFor="let producto of productos" (click)="selectProduct(producto)"
+          [class.active]="selectedProduct?.id === producto.id">
           {{ producto.nombre }}
         </li>
       </ul>
@@ -43,7 +40,7 @@
     </div>
     <div class="product-content">
       <div class="product-description">
-        <p>{{ selectedProduct.descripcion }}</p>
+        <p [innerHTML]="selectedProduct.descripcion"></p>
       </div>
       <div class="product-image-wrapper">
         <img [src]="selectedProduct.url" alt="{{ selectedProduct.nombre }}" class="product-image">

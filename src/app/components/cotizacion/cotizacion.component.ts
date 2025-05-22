@@ -23,8 +23,6 @@ export class CotizacionComponent {
 
   onSubmit() {
     if (this.cotizacion.captcha) {
-      // Aquí puedes manejar el envío de los datos del formulario
-      console.log('Formulario enviado con éxito:', this.cotizacion);
     } else {
       alert('Por favor, confirma que no eres un robot.');
     }
