@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000'
+  apiUrl: 'https://allprint-backend.vercel.app'
 };
 export const firebaseConfig = {
   apiKey: "AIzaSyAPudU8TSe3Vc9pEgMXJ6qpO8dVREQAcNk",
