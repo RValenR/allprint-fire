@@ -133,10 +133,13 @@
 }
 
 .matrix-item {
-  width: calc(20% - 15px); /* 5 por fila */
-  min-width: 150px; /* Evita que los elementos sean demasiado pequeños */
+  width: calc(20% - 15px);
+  /* 5 por fila */
+  min-width: 150px;
+  /* Evita que los elementos sean demasiado pequeños */
   text-align: center;
-  background: #ffffff; /* Fondo oscuro */
+  background: #ffffff;
+  /* Fondo oscuro */
   color: rgb(0, 0, 0);
   padding: 20px;
   border-radius: 10px;
@@ -151,7 +154,8 @@
   /* Sombra al pasar el mouse */
   background-color: #0056b3;
   color: white;
-  h3{
+
+  h3 {
     color: white;
   }
 }
@@ -219,7 +223,8 @@
 #slider .swiper-container {
   width: 100%;
   height: 400px;
-  overflow: hidden; /* Evita el desbordamiento */
+  overflow: hidden;
+  /* Evita el desbordamiento */
 }
 
 #slider .swiper-slide img {
@@ -263,7 +268,7 @@
   font-size: 40px;
 }
 
-#slider .redirect-container{
+#slider .redirect-container {
   display: flex;
   margin: 50px 0;
   justify-content: center;
@@ -311,6 +316,7 @@
   background-color: #eb4536;
   box-shadow: 0 6px 12px rgba(0, 86, 179, 0.4);
 }
+
 #slider .button-maps {
   width: 140px;
   background-color: #0a60cd;
@@ -332,20 +338,31 @@
 }
 
 @media (max-width: 1152px) {
+
   #slider .swiper-button-next,
   .swiper-button-prev {
-    margin-top: 10px !important; /* Ajusta el margen cuando la pantalla sea menor a 1552px */
+    margin-top: 10px !important;
+    /* Ajusta el margen cuando la pantalla sea menor a 1552px */
+  }
+}
+
+@media (max-width: 650px) {
+  .redirect-container {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 
 #services {
   padding: 40px;
-  position: relative; /* Asegura que el pseudo-elemento se posicione sobre el fondo */
+  position: relative;
+  /* Asegura que el pseudo-elemento se posicione sobre el fondo */
 }
 
 #services h2 {
-  color: white; /* Asegura que el texto sea visible sobre la imagen */
+  color: white;
+  /* Asegura que el texto sea visible sobre la imagen */
   font-size: 30px;
 }
 
@@ -357,18 +374,22 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../../../assets/images/background-servicios.png'); /* Cambia la URL por tu imagen */
+  background-image: url('../../../assets/images/background-servicios.png');
+  /* Cambia la URL por tu imagen */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: brightness(40%); /* Oscurece la imagen aplicando el filtro */
-  z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido */
+  filter: brightness(40%);
+  /* Oscurece la imagen aplicando el filtro */
+  z-index: -1;
+  /* Asegura que el pseudo-elemento esté detrás del contenido */
 }
 
 #clients .swiper-container {
   width: 100%;
   height: 200px;
-  overflow: hidden; /* Evita el desbordamiento */
+  overflow: hidden;
+  /* Evita el desbordamiento */
 }
 
 #clients .swiper-slide {
@@ -401,4 +422,11 @@
   background: white !important;
   width: 12px !important;
   height: 12px !important;
+}
+
+
+@media (max-width: 650px) {
+  #clients .swiper-slide img {
+    width: 80px;
+  }
 }

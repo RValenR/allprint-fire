@@ -1,7 +1,8 @@
 .topbar {
     /* background-color: hsla(197, 92%, 60%, 1); */
-    background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 23%, rgba(167,175,37,1) 39%, rgba(48,157,45,1) 50%, rgba(24,153,46,1) 57%, rgba(12,151,157,1) 67%, rgba(0,6,121,1) 83%, rgba(8,4,14,1) 97%);    align-items: center;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 23%, rgba(167, 175, 37, 1) 39%, rgba(48, 157, 45, 1) 50%, rgba(24, 153, 46, 1) 57%, rgba(12, 151, 157, 1) 67%, rgba(0, 6, 121, 1) 83%, rgba(8, 4, 14, 1) 97%);
+    align-items: center;
     justify-content: center;
     display: flex;
 }
@@ -11,18 +12,18 @@
     height: 80px; */
     flex: 0 0 auto;
     margin-left: 40px;
-
-    .img-logo {
-        width: 250px;
-        z-index: 3;
-        /* height: 70px; */
-    }
 }
 
-.menu-bar{
+.img-logo {
+    width: 250px;
+    z-index: 3;
+    /* height: 70px; */
+}
+
+.menu-bar {
     display: none;
 
-    .icon-menu{
+    .icon-menu {
         color: #fff;
     }
 }
@@ -38,6 +39,7 @@
     font-weight: 500;
     font-size: 18px;
 }
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -60,7 +62,13 @@ ul li.active {
     background-color: transparent;
 }
 
-ul li:hover{
+ul li:hover {
     /* border-bottom: 3px solid #ff0000; */
     color: #e72f2f;
+}
+
+@media (max-width: 650px) {
+  .img-logo {
+    width: 150px;
+  }
 }
