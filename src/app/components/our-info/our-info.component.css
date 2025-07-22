@@ -1,6 +1,7 @@
 /* Estilos generales */
 body {
-    font-family: 'DM Serif Text', serif;
+    font-family: 'Neuton', serif;
+    font-weight: 700;  
     margin: 0;
     padding: 0;
   }
@@ -35,6 +36,8 @@ body {
   }
   
   .interactive-text h1 {
+    font-family: 'Neuton', serif;
+    font-weight: 700;
     font-size: 3rem;
     color: white;
     white-space: nowrap;
@@ -57,6 +60,8 @@ body {
   /* Segundo div dividido en dos partes */
  /* Estilos para el contenedor principal más pequeño */
  .half-container {
+  font-family: 'Neuton', serif;
+    font-weight: 700;
   position: relative; /* Para que el ::before se posicione correctamente */
   display: flex;
   justify-content: space-between;
@@ -91,8 +96,9 @@ body {
 .half-container .left {
   flex: 1;
   padding: 20px;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 22px;
+  font-family: 'Neuton', serif;
+  font-weight: 700;
   text-align: justify;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
 }
@@ -147,9 +153,10 @@ body {
   flex: 1;
   padding: 15px;
   color: white;
-  font-weight: bold;
+  font-family: 'Neuton', serif;
+    font-weight: 700;
   border-radius: 10px;
-  font-size: 18px; /* Letra un poco más pequeña */
+  font-size: 20px; /* Letra un poco más pequeña */
   justify-content: center;
   h1{
     color: white;
@@ -214,12 +221,15 @@ body {
 .logo-section {
     padding: 40px;
     text-align: center;
+    
   }
   
   .logo-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    font-family: 'Neuton', serif;
+    font-weight: 700;
   }
   
   .logo-item {
@@ -249,6 +259,8 @@ body {
   
   .logo-item h4 {
     margin-top: 10px;
-    font-size: 1rem;
+    font-family: 'Neuton', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
   }
   
