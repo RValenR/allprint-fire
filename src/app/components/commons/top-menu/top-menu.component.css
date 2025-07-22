@@ -1,6 +1,4 @@
 .topbar {
-    /* background-color: hsla(197, 92%, 60%, 1); */
-    background: rgb(255, 255, 255);
     background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 23%, rgba(167, 175, 37, 1) 39%, rgba(48, 157, 45, 1) 50%, rgba(24, 153, 46, 1) 57%, rgba(12, 151, 157, 1) 67%, rgba(0, 6, 121, 1) 83%, rgba(8, 4, 14, 1) 97%);
     align-items: center;
     justify-content: center;
@@ -8,8 +6,6 @@
 }
 
 .logo-container {
-    /* width: 80px;
-    height: 80px; */
     flex: 0 0 auto;
     margin-left: 40px;
 }
@@ -17,7 +13,6 @@
 .img-logo {
     width: 250px;
     z-index: 3;
-    /* height: 70px; */
 }
 
 .menu-bar {
@@ -43,6 +38,7 @@
 ul {
     list-style-type: none;
     margin: 0;
+    padding: 0;
 }
 
 ul li {
@@ -63,12 +59,79 @@ ul li.active {
 }
 
 ul li:hover {
-    /* border-bottom: 3px solid #ff0000; */
     color: #e72f2f;
 }
 
 @media (max-width: 650px) {
-  .img-logo {
-    width: 150px;
-  }
+    .img-logo {
+        width: 150px;
+    }
+}
+
+/* ============================= */
+/* NUEVOS ESTILOS PARA MÓVILES  */
+/* ============================= */
+
+@media (max-width: 768px) {
+    .menu-bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 30px;
+        width: 40px;
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: 20px;
+        z-index: 1000;
+    }
+
+    .menu-bar span {
+        height: 4px;
+        background-color: #ffffff; /* Líneas blancas */
+        margin: 4px 0;
+        border-radius: 2px;
+        display: block;
+    }
+
+    .top-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background: #003366; /* Fondo azul oscuro */
+        width: 100%;
+        z-index: 999;
+        padding: 0;
+        color: white;
+    }
+
+    .top-menu.open {
+        display: flex;
+    }
+
+    .top-menu ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .top-menu ul li {
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        background-color: #003366; /* Fondo azul */
+        color: white;
+        text-align: center;
+        border-bottom: 1px solid #002244;
+        transition: background-color 0.3s ease;
+    }
+
+    .top-menu ul li:hover,
+    .top-menu ul li.active {
+        background-color: #e72f2f; /* Fondo rojo */
+        color: white;
+    }
 }
