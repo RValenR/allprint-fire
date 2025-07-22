@@ -38,7 +38,7 @@ body {
   .interactive-text h1 {
     font-family: 'Neuton', serif;
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 4rem;
     color: white;
     white-space: nowrap;
     animation: slide-in 3s ease-out forwards;
