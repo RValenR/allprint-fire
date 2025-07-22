@@ -1,24 +1,8 @@
 .main-container {
-  font-family: 'DM Serif Text', serif;
+  font-family: 'Neuton', serif;
+  font-weight: 700;   
   flex-direction: column;
   text-align: center;
-}
-
-/*contenedor cotizar en linea*/
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 20px auto;
-  width: 100%;
-  /* Ocupa todo el espacio horizontal */
-  max-width: 1200px;
-  /* Ancho máximo */
-
 }
 
 /* Title styles */
@@ -30,6 +14,7 @@
   margin: 0;
   font-size: 24px;
   color: #333333;
+  font-weight: 700;   
 }
 
 /* Button container styles */
@@ -67,6 +52,7 @@
 
 /* Sección de contenido */
 .content-section {
+  font-size: 20px; 
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -133,6 +119,7 @@
 }
 
 .matrix-item {
+  font-size: 20px; 
   width: calc(20% - 15px);
   /* 5 por fila */
   min-width: 150px;
@@ -162,7 +149,7 @@
 
 /* Estilo para los iconos */
 .matrix-icon {
-  font-size: 50px;
+  font-size: 60px;
   color: #007bff;
   /* Color azul */
   margin-bottom: 10px;
@@ -170,7 +157,7 @@
 
 /* Título debajo del icono */
 .matrix-item h3 {
-  font-size: 1rem;
+  font-size: 20px;
   color: #333333;
   margin: 0;
 }
@@ -182,12 +169,14 @@
   text-align: center;
   margin: 40px 0;
   padding: 0 20px;
+  
   /* Agrega un pequeño margen a los lados */
 }
 
 /* Título */
 .clientes-container h2 {
-  font-size: 2rem;
+  font-size: 3rem;
+  font-weight: 700;   
   margin-bottom: 30px;
 }
 
@@ -265,7 +254,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: 40px;
+  font-size: 50px;
 }
 
 #slider .redirect-container {
@@ -363,7 +352,8 @@
 #services h2 {
   color: white;
   /* Asegura que el texto sea visible sobre la imagen */
-  font-size: 30px;
+  font-size: 40px;
+  font-weight: 700;   
 }
 
 
