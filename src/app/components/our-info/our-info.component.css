@@ -37,7 +37,7 @@ body {
   }
   
   .interactive-text h1 {
-    font-family: 'Goldman', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   font-weight: 700;
     font-size: 3rem;
     color: white;
@@ -96,7 +96,7 @@ body {
   flex: 1;
   padding: 20px;
   font-size: 22px;
-  font-family: 'Neuton', serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   text-align: justify;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
@@ -152,7 +152,7 @@ body {
   flex: 1;
   padding: 15px;
   color: white;
-  font-family: 'Neuton', serif;
+  font-family: 'Montserrat', sans-serif;
     font-weight: 700;
   border-radius: 10px;
   font-size: 20px; /* Letra un poco más pequeña */
@@ -227,7 +227,7 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    font-family: 'Neuton', serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
   }
   
@@ -258,7 +258,7 @@ body {
   
   .logo-item h4 {
     margin-top: 10px;
-    font-family: 'Neuton', serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.5rem;
   }
