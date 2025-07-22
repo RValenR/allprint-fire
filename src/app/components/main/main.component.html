@@ -25,39 +25,40 @@
     </div>
     <div class="redirect-container" *ngIf="parametros.correo_contacto">
       <!-- Botón de Email -->
-      <div class="btn-container">
-        <div class="button-mail">
-          <a [href]="'mailto:' + parametros.correo_contacto + 
-                      '?subject=' + encodeMessage(parametros.asunto_correo || 'Consulta') + 
-                      '&body=' + encodeMessage(parametros.cuerpo_correo || 'Hola, quisiera más información')" 
-             target="_blank">
-            <img src="assets/images/logos/mail_logo.png" alt="Gmail" style="width: 30px;">
-          </a>
-        </div>
-        <p>{{ parametros.correo_contacto }}</p>
-      </div>
-    
-      <!-- Botón de WhatsApp -->
-      <div class="btn-container">
-        <div class="button-whatsapp">
-          <a [href]="'https://wa.me/' + parametros.whatsapp_numero + 
-                     '?text=' + encodeMessage(parametros.whatsapp_mensaje || 'Hola, quiero información')" 
-             target="_blank">
-            <img src="assets/images/logos/whatsapp_logo.png" alt="WhatsApp" style="width: 30px;">
-          </a>
-        </div>
-        <p>+{{ parametros.whatsapp_numero?.replace('593', '593 ') }}</p>
-      </div>
-    
-      <!-- Botón de Maps -->
-      <div class="btn-container">
-        <div class="button-maps">
-          <a [href]="parametros.maps_ubicacion" target="_blank">
-            <img src="assets/images/logos/logo_maps.png" alt="Google Maps" style="width: 30px;">
-          </a>
-        </div>
-        <p>{{ parametros.texto_ubicacion || 'Ubícanos' }}</p>
-      </div>
+<div class="btn-container">
+  <a [href]="'mailto:' + parametros.correo_contacto + 
+              '?subject=' + encodeMessage(parametros.asunto_correo || 'Consulta') + 
+              '&body=' + encodeMessage(parametros.cuerpo_correo || 'Hola, quisiera más información')" 
+     target="_blank">
+    <div class="button-mail">
+      <img src="assets/images/logos/mail_logo.png" alt="Gmail" style="width: 30px;">
+    </div>
+  </a>
+  <p>{{ parametros.correo_contacto }}</p>
+</div>
+
+<!-- Botón de WhatsApp -->
+<div class="btn-container">
+  <a [href]="'https://wa.me/' + parametros.whatsapp_numero + 
+              '?text=' + encodeMessage(parametros.whatsapp_mensaje || 'Hola, quiero información')" 
+     target="_blank">
+    <div class="button-whatsapp">
+      <img src="assets/images/logos/whatsapp_logo.png" alt="WhatsApp" style="width: 30px;">
+    </div>
+  </a>
+  <p>+{{ parametros.whatsapp_numero?.replace('593', '593 ') }}</p>
+</div>
+
+<!-- Botón de Maps -->
+<div class="btn-container">
+  <a [href]="parametros.maps_ubicacion" target="_blank">
+    <div class="button-maps">
+      <img src="assets/images/logos/logo_maps.png" alt="Google Maps" style="width: 30px;">
+    </div>
+  </a>
+  <p>{{ parametros.texto_ubicacion || 'Ubícanos' }}</p>
+</div>
+
     </div>
     
   </section>

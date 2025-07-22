@@ -260,7 +260,33 @@
   align-items: center;
   flex-direction: column;
   font-size: 50px;
+  animation: slideInFromLeft 1s ease-out;
+  text-align: center;
+  padding: 0 20px;
 }
+
+/* Animación del título al cargar */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  #slider .title {
+    font-size: 28px;
+  }
+  #slider .title span {
+    font-size: 20px;
+  }
+}
+
 
 #slider .redirect-container {
   display: flex;
@@ -425,3 +451,18 @@
     width: 80px;
   }
 }
+@media (max-width: 650px) {
+  .redirect-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-whatsapp,
+  .button-mail,
+  .button-maps {
+    width: 90%;
+    max-width: 300px;
+    margin: 10px 0; /* margen vertical para separación */
+  }
+}
+
