@@ -1,6 +1,7 @@
+
 .main-container {
-  font-family: 'Neuton', serif;
-  font-weight: 700;   
+  font-family: 'Goldman', sans-serif;
+  font-weight: 700;  
   flex-direction: column;
   text-align: center;
 }
@@ -52,6 +53,8 @@
 
 /* Sección de contenido */
 .content-section {
+  font-family: 'Neuton', serif;
+  font-weight: 700;  
   font-size: 20px; 
   display: flex;
   align-items: center;
@@ -76,6 +79,8 @@
 }
 
 .content-text h1 {
+  font-family: 'Neuton', serif;
+  font-weight: 700;  
   font-size: 2rem;
   margin-bottom: 10px;
   color: #333333;

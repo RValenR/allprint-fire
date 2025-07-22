@@ -1,6 +1,6 @@
 /* Estilos generales */
 body {
-    font-family: 'Neuton', serif;
+    font-family: 'Goldman', sans-serif;
     font-weight: 700;  
     margin: 0;
     padding: 0;
@@ -23,6 +23,7 @@ body {
   
   /* Estilo para el texto interactivo */
   .interactive-text {
+     
     position: absolute;
     top: 70%;
     left: 50%;
@@ -36,9 +37,9 @@ body {
   }
   
   .interactive-text h1 {
-    font-family: 'Neuton', serif;
-    font-weight: 700;
-    font-size: 4rem;
+    font-family: 'Goldman', sans-serif;
+  font-weight: 700;
+    font-size: 3rem;
     color: white;
     white-space: nowrap;
     animation: slide-in 3s ease-out forwards;
@@ -60,8 +61,6 @@ body {
   /* Segundo div dividido en dos partes */
  /* Estilos para el contenedor principal más pequeño */
  .half-container {
-  font-family: 'Neuton', serif;
-    font-weight: 700;
   position: relative; /* Para que el ::before se posicione correctamente */
   display: flex;
   justify-content: space-between;
