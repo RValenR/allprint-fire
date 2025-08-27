@@ -46,4 +46,14 @@ export class TopMenuComponent implements OnInit {
       window.open(this.mapsUrl, '_blank');
     }
   }
+
+    // Cierra el menu contextual si se da click en otro lado
+  onClickOutside(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+    console.log('Click detected outside:', target);
+    if (!target.closest('.menu-bar')) {
+      console.log('Closing menu');
+      this.menuOpen = false;
+    }
+  }
 }

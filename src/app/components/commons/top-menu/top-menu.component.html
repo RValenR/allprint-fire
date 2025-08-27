@@ -1,4 +1,4 @@
-<div class="topbar">
+<div class="topbar" (document:click)="onClickOutside($event)">
     <div class="logo-container">
         <a routerLink="/">
             <img class="img-logo" src="assets/images/allprint-logo1.webp" alt="logo allprint">
@@ -10,18 +10,18 @@
 
   <div class="menu-bar" (click)="toggleMenu()">
     <!-- <i class="icon-menu"><fa-icon [icon]="faBars"></fa-icon></i> -->
-    <span></span>
-    <span></span>
-    <span></span>
+    <span class="bar-menu"></span>
+    <span class="bar-menu"></span>
+    <span class="bar-menu"></span>
   </div>
 
     <div class="top-menu" [class.open]="menuOpen">
         <ul>
-            <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</li>
-            <li routerLink="/quienes-somos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Quienes somos</li>
-            <li routerLink="/productos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Productos y Servicios</li>
-            <li routerLink="/contactanos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ofertas</li>
-            <li *ngIf="mapsUrl" (click)="openMaps()" style="cursor: pointer;">
+            <li class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</li>
+            <li class="nav-link" routerLink="/quienes-somos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Quienes somos</li>
+            <li class="nav-link" routerLink="/productos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Productos y Servicios</li>
+            <li class="nav-link" routerLink="/contactanos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Ofertas</li>
+            <li class="nav-link" *ngIf="mapsUrl" (click)="openMaps()" style="cursor: pointer;">
                 Ubícanos
               </li>
 
